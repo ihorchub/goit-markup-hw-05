@@ -134,6 +134,10 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-nav .link:hover,
@@ -163,6 +167,10 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts .link:hover,
@@ -179,7 +187,7 @@ img {
   color: var(--akcent-color);
 }
 
-.link.current::after {
+.list-nav .current.link::after {
   content: '';
   position: absolute;
   left: 0;
@@ -187,7 +195,7 @@ img {
 
   width: 100%;
   height: 4px;
-  border-radius: 52px;
+  border-radius: 2px;
 
   background-color: var(--akcent-color);
 }
@@ -247,6 +255,10 @@ img {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -424,6 +436,10 @@ img {
 
   color: var(--social-color);
   background-color: var(--base-color);
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon:hover,
@@ -464,6 +480,10 @@ img {
   border: 1px solid var(--social-color);
 
   color: var(--social-color);
+
+  transition-property: color, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icon:hover,
@@ -505,6 +525,19 @@ footer {
 
 .address-map {
   color: var(--base-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.address-tel,
+.address-mail {
+  color: rgba(255, 255, 255, 0.6);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-map:hover,
@@ -514,11 +547,6 @@ footer {
 .address-mail:hover,
 .address-mail:focus {
   color: var(--akcent-color);
-}
-
-.address-tel,
-.address-mail {
-  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-socials {
@@ -538,10 +566,14 @@ footer {
 .social-icon.link {
   color: var(--base-color);
   background-color: var(--footer-social-color);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-icon:hover,
-.social-icon:focus {
+.social-icon.link:hover,
+.social-icon.link:focus {
   background-color: var(--akcent-color);
   color: var(--base-color);
 }
@@ -556,6 +588,12 @@ footer {
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+
+  transition-property: opacity;
+  transition-duration: 2250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -627,6 +665,10 @@ footer {
   line-height: 1.62;
   text-align: center;
   letter-spacing: inherit;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filters-list:not(:last-child) {
@@ -653,6 +695,10 @@ footer {
 
 .works-link {
   display: inline-block;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .works-link:hover,
@@ -661,24 +707,20 @@ footer {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.works-link:hover .overlay-text {
-  opacity: 1;
-}
-
 .overlay {
   position: relative;
+  overflow: hidden;
 }
 
 .overlay-text {
   position: absolute;
   top: 0;
   left: 0;
+  transform: translateY(100%);
 
   width: 100%;
   height: 100%;
   padding: 63px 24px;
-
-  opacity: 0;
 
   background-color: rgba(33, 150, 243, 0.9);
 
@@ -686,6 +728,15 @@ footer {
   font-size: 18px;
   line-height: 1.56;
   color: var(--base-color);
+
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.works-link:hover .overlay-text,
+.works-link:focus .overlay-text {
+  transform: translateY(0);
 }
 
 .works-descr {
